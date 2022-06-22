@@ -18,10 +18,7 @@ jobs:
         sudo apt-get install -y \
           neofetch screenfetch
         mkdir -p $HOME/.local/bin
-        pip install --user pip
-        PATH=$HOME/.local/bin:$PATH
-        $HOME/.local/bin/pip install --user pipx
-        $HOME/.local/bin/pipx install speedtest-cli
+        pipx install speedtest-cli
         pwd -P | tee -a ./output.txt
         neofetch | tee -a ./output.txt
         screenfetch | tee -a ./output.txt
