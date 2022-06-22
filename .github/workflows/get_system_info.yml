@@ -28,7 +28,7 @@ jobs:
         neofetch | tee -a ./output.txt
         screenfetch | tee -a ./output.txt
         lscpu | tee -a ./output.txt
-        which speedtest | tee -a ./output.txt && yes | speedtest | tee -a ./output.txt
+        which speedtest | tee -a ./output.txt && echo "yes" | speedtest | tee -a ./output.txt
 
     - name: Store output
       uses: actions/upload-artifact@v3
