@@ -1,0 +1,33 @@
+name: Github Action
+
+on:
+  push:
+    branches:
+    - github-ci
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Updating packages
+      run: |
+        sudo apt-get update
+        sudo apt-get -y upgrade
+    - name: Installing additional packages
+      run: |
+        sudo apt-get install -y \
+          neofetch screenfetch
+        pip install --user -U pip
+        $HOME/.local/bin/pip install --user pipx
+        $HOME/.local/bin/pipx install speedtest-cli
+        pwd -P | tee -a ./output.txt
+        neofetch | tee -a ./output.txt
+        screenfetch | tee -a ./output.txt
+        lscpu | tee -a ./output.txt
+        $HOME/.local/bin/speedtest-cli --share | tee -a ./output.txt
+
+    - name: Store output
+      uses: actions/upload-artifact@v3
+      with:
+        name: output.txt
+        path: ./
