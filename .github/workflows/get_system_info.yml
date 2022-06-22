@@ -19,6 +19,7 @@ jobs:
         curl -LO https://install.speedtest.net/app/cli/install.deb.sh
         chmod 755 ./install.deb.sh
         sudo ./install.deb.sh
+        sudo apt-get update
         sudo apt-get install -y speedtest
     - name: Running build
       run: |
