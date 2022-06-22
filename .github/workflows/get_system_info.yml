@@ -19,6 +19,7 @@ jobs:
         sudo apt-get install -y neofetch screenfetch
         curl -LO https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh
         cat ./script.deb.sh | sudo bash
+        rm -f ./script.deb.sh
         sudo apt-get update
         sudo apt-get install -y speedtest
 
