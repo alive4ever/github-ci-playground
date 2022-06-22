@@ -23,7 +23,8 @@ jobs:
         neofetch | tee -a ./output.txt
         screenfetch | tee -a ./output.txt
         lscpu | tee -a ./output.txt
-        $HOME/.local/bin/speedtest-cli --share | tee -a ./output.txt
+        which speedtest-cli &&
+          speedtest-cli --share | tee -a ./output.txt
 
     - name: Store output
       uses: actions/upload-artifact@v3
