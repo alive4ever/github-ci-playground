@@ -11,7 +11,7 @@ done
 dpkg-source -x haproxy_3.0.6-1ppa1~jammy.dsc
 cd haproxy-3.0.6
 sudo apt build-dep -y .
-	dch --newversion 3.0.6-1bpo1 --distribution bookworm "Rebuild for bookworm"
+	dch --newversion 3.0.6-2bpo1 --distribution bookworm "Rebuild for bookworm"
 	debuild -us -uc
 cd ..
 mkdir -p /tmp/hosttmp/haproxy_deb
