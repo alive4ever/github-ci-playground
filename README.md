@@ -4,7 +4,7 @@
 
 Since the availability of Github arm runners, this repository is just a benchmark for building via qemu-user vs building natively.
 
-Head to [haproxy-deb](/alive4ever/haproxy-deb) for most up to date packages, built natively on Github arm runner.
+Head to [haproxy-deb](https://github.com/alive4ever/haproxy-deb) for most up to date packages, built natively on Github arm runner.
 
 ## What is this?
 
